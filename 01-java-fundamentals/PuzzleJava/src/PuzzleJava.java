@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 
 public class PuzzleJava {
@@ -36,11 +37,9 @@ public class PuzzleJava {
 
         return password;
 }
-/*
-the method takes an int length as an argument and creates
-an array of random eight character words.
-The array should be the length passed in as an int.*/
 
+//the method takes an int length as an argument and creates
+//an array of random eight character words.
     public ArrayList<String> getNewPasswordSet(int num){
         ArrayList<String> randomStrings = new ArrayList<String>();
         for (int i = 0; i< num; i++){
@@ -52,13 +51,16 @@ The array should be the length passed in as an int.*/
     /*shuffleArray
 Write a method that takes an array and and mixes up all the values in a pseudo-random way.
 Hint: use random indexes within the array, and swap values repeatedly. */
-//    public int[] shuffleArray(int[] arr){
-//        Random rand = new Random();
-//        for (int i = 0; i< arr.length; i++){
-//            int j = rand.
-//        }
-//
-//
-//        return arr;
-//    }
+    public String shuffleArray(int[] arr){
+        Random rand = new Random();
+        for (int i = 0; i < arr.length; i++){
+            int j = rand.nextInt(arr.length);
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+        }
+
+
+        return Arrays.toString(arr);
+    }
 }

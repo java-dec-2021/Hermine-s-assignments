@@ -1,6 +1,7 @@
 package com.company;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class BasicJava {
     //this method prints all the numbers from 1 to 255.
@@ -88,25 +89,20 @@ public class BasicJava {
         for (int i = 0; i <= array.length-1; i++) {
             squared[i] = array[i] * array[i];
 
-        }for (int j = 0; j < squared.length; j++){
-            System.out.println(squared[j]);
         }
+        System.out.println(Arrays.toString(squared));
     }
 
     //Given an array this method replaces any negative number with the value of 0.
     public void eliminateNegative(int[] x){
         int[] newArray = new int[x.length];
         for (int i = 0; i < newArray.length; i++) {
-            if(x[i] > 0){
-                newArray[i] = x[i];
-        }
-            else{
+            newArray[i] = x[i];
+            if(x[i] < 0){
                 newArray[i] = 0;
-            }
         }
-        for (int j = 0; j < newArray.length; j++){
-            System.out.println(newArray[j]);
         }
+        System.out.println(Arrays.toString(newArray));
     }
    //this method returns an array with the max, min and average of a given array.
     public ArrayList<Integer> returnArrayInfo(int[] array){
@@ -114,21 +110,15 @@ public class BasicJava {
         int min = array[0];
         int max = 0;
         int sum = 0;
-        //find the min
+
         for (int i = 0; i < array.length; i++) {
             if (array[i] < min){
                 min = array[i];
             }
-        }
-        //find the max
-        for (int j = 0; j < array.length; j++) {
-            if (array[j] > max){
-                max = array[j];
+            if (array[i] > max){
+                max = array[i];
             }
-        }
-        //find the sum of all elements
-        for (int k = 0; k < array.length; k++) {
-            sum += array[k];
+            sum += array[i];
         }
         int average = sum/array.length;
 
@@ -138,20 +128,15 @@ public class BasicJava {
         return newArray;
 
     }
-    /*Shifting the Values in the Array
-Given any array x, say [1, 5, 10, 7, -2], write a method that shifts each number by one to the front.
-For example, when the method is done, an x of [1, 5, 10, 7, -2] should become [5, 10, 7, -2, 0].
-Notice that the last number is 0. The method does not need to wrap around the values shifted out of bounds.*/
-    public ArrayList<Integer> shiftingValues(int[] x){
-    //public void shiftingValues(int[] x){
-        ArrayList<Integer> shiftedArray = new ArrayList<Integer>();
-        int[] y = new int[x.length];
-        for (int k = 0; k < y.length-1; k++) {
-            y[k] = x[k+1];
-        }
-        for (int l = 0; l < x.length; l++) {
-            shiftedArray.add(y[l]);
+
+// method shifts each number of a given array by one to the front and the last number is 0.
+// eg [1, 5, 10, 7, -2] will become [5, 10, 7, -2, 0].
+    public int[] shiftingValues(int[] x){
+        for (int k = 0; k < x.length-1; k++) {
+            x[k] = x[k + 1];
     }
-  return shiftedArray;
+        x[x.length-1] = 0;
+
+    return x;
 }}
 

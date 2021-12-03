@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.Arrays;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -19,13 +21,13 @@ public class Main {
 //        bj.arrayWithOddNumbers(1,255);
 //        bj.getAverage(array);
 //        System.out.println(bj.greaterThan(newArray, 1));
-//        bj.squareValues(newArray);
-//        bj.eliminateNegative(newArray);
+        bj.squareValues(newArray);
+         // bj.eliminateNegative(newArray);
         int[] arr = {1, 5, 10, 7, -2};
 
-        //System.out.println(bj.returnArrayInfo(newArray));
+        System.out.println(bj.returnArrayInfo(arr));
 
-        System.out.println(bj.shiftingValues(arr));
+        //System.out.println (Arrays.toString(bj.shiftingValues(arr)));
 
 
 
